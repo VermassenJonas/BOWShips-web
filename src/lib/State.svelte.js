@@ -1,4 +1,5 @@
 import { draw } from "svelte/transition";
+import { tonsPerCube } from "./constants";
 
 
 
@@ -10,7 +11,7 @@ export class Ship {
 			beam : $state(0),
 			draught: $state(0),
 			// @ts-ignore
-			blockDisplacement: $derived(this.hull.length * this.hull.beam *this.hull.draught * 1.09),
+			blockDisplacement: $derived(this.hull.length * this.hull.beam *this.hull.draught * tonsPerCube),
 			inpDisplacement: $state(0),
 			inpBlockCoeff: $state(0),
 			fixDisplacement: $state(false),
